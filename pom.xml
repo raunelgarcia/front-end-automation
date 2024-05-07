@@ -15,9 +15,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.example</groupId>
-      <artifactId>front-end-framework</artifactId>
-      <version>${front-end-framework.version}</version>
+      <groupId>org.example</groupId>
+      <artifactId>web-mobile-framework</artifactId>
+      <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
