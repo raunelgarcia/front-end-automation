@@ -8,21 +8,22 @@ import utilities.DriverConfiguration;
 
 public class TestErrorHandler implements TestWatcher, AfterAllCallback {
 
-  @Override
-  public void testFailed(ExtensionContext context, Throwable cause) {
-    AllureReport.attachScreenshot(DriverConfiguration.getDriver());
-    cleanUp();
-  }
+    @Override
+    public void testFailed(ExtensionContext context, Throwable cause) {
+        AllureReport.attachScreenshot(DriverConfiguration.getDriver());
+        cleanUp();
+    }
 
-  @Override
-  public void testSuccessful(ExtensionContext context) {
-    cleanUp();
-  }
+    @Override
+    public void testSuccessful(ExtensionContext context) {
+        cleanUp();
+    }
 
-  void cleanUp() {
-    DriverConfiguration.quitDriver();
-  }
+    void cleanUp() {
+        DriverConfiguration.quitDriver();
+    }
 
-  @Override
-  public void afterAll(ExtensionContext extensionContext) throws Exception {}
+    @Override
+    public void afterAll(ExtensionContext extensionContext) throws Exception {
+    }
 }

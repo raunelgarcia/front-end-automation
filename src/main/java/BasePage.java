@@ -1,1 +1,2 @@
-public class BasePage {}
+public class BasePage {
+}
