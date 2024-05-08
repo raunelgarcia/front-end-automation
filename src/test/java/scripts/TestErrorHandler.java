@@ -1,4 +1,4 @@
-package tests;
+package scripts;
 
 import org.junit.jupiter.api.extension.AfterAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;

@@ -1,4 +1,4 @@
-package tests;
+package scripts;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -6,7 +6,7 @@ import pages.Marca;
 import utilities.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static utilities.BasePage.waitSeconds;
+import static utilities.FrontEndOperation.waitSeconds;
 
 @ExtendWith(TestErrorHandler.class)
 public class MarcaTest {
