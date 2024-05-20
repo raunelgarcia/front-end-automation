@@ -20,7 +20,7 @@ public class Amazon {
     private WebDriver driver;
 
     @FindBy(id = "twotabsearchtextbox")
-    @AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/chrome_search_hint_view")
+    @AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/chrome_action_bar_search_icon")
     WebElement searchBar;
 
     @FindBy(id = "a-autoid-0")

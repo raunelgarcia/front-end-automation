@@ -18,7 +18,7 @@ public class MarcaTest {
     public static void clean_reports_logs() {
         JSExecutor.runCommand(LocalEnviroment.isWindows() ? Constants.ALLURE_CLEAN_COMMAND_WIN : Constants.ALLURE_CLEAN_COMMAND_MAC);
         JSExecutor.runCommand(LocalEnviroment.isWindows() ? Constants.NETWORK_LOG_CLEAN_COMMAND_WIN : Constants.NETWORK_LOG_CLEAN_COMMAND_MAC);
-        NetworkLogs.clearLogs();
+        //NetworkLogs.clearLogs();
     }
 
     @BeforeEach
