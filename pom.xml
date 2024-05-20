@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>front-end-automation</artifactId>
+    <artifactId>automation-project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <java.version>11</java.version>
-        <front-end-framework.version>1.0.0</front-end-framework.version>
+        <front-end-framework.version>1.0.8</front-end-framework.version>
     </properties>
 
     <repositories>

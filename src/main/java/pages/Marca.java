@@ -6,6 +6,7 @@ import static utilities.DriverConfiguration.getDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,10 @@ public class Marca extends FrontEndOperation {
 
   @FindBy(id = "buttonYes")
   WebElement ageButton;
+
+  @FindBy(className = "ue-c-cover-content__link")
+  @AndroidFindBy(id = "com.iphonedroid.marca:id/ue_cms_list_item_text_container")
+  WebElement noticia;
 
   public Marca() {
     driver = getDriver();
@@ -48,5 +53,9 @@ public class Marca extends FrontEndOperation {
 
   public boolean isNoticeShow() {
     return isVisible(randomNotice);
+  }
+
+  public void clickNoticia() {
+    clickWhenVisible(noticia);
   }
 }

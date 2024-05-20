@@ -6,6 +6,7 @@ import pages.Marca;
 import utilities.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static utilities.FrontEndOperation.compareTexts;
 import static utilities.FrontEndOperation.waitSeconds;
 
 @ExtendWith(TestErrorHandler.class)
@@ -28,6 +29,7 @@ public class MarcaTest {
     @Test
     public void checkNewsArticleImage() {
         controller.acceptCookies();
+        controller.clickNoticia();
     }
 
     @Test
