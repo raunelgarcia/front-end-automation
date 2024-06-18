@@ -5,38 +5,61 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import pages.Discord;
 import utilities.*;
 
-import static scripts.MarcaTest.runAllureReport;
 import static utilities.FrontEndOperation.waitSeconds;
 
 @ExtendWith(TestErrorHandler.class)
 public class DiscordTest {
 
-    Discord controller;
+  Discord controller;
 
-    @BeforeAll
-    public static void clean_reports_logs() {
-        JSExecutor.runCommand(LocalEnviroment.isWindows() ? Constants.ALLURE_CLEAN_COMMAND_WIN : Constants.ALLURE_CLEAN_COMMAND_MAC);
-        JSExecutor.runCommand(LocalEnviroment.isWindows() ? Constants.NETWORK_LOG_CLEAN_COMMAND_WIN : Constants.NETWORK_LOG_CLEAN_COMMAND_MAC);
-        NetworkLogs.clearLogs();
+  @BeforeAll
+  public static void clean_reports_logs() {
+    JSExecutor.runCommand(
+        LocalEnviroment.isWindows()
+            ? Constants.ALLURE_CLEAN_COMMAND_WIN
+            : Constants.ALLURE_CLEAN_COMMAND_MAC);
+    JSExecutor.runCommand(
+        LocalEnviroment.isWindows()
+            ? Constants.NETWORK_LOG_CLEAN_COMMAND_WIN
+            : Constants.NETWORK_LOG_CLEAN_COMMAND_MAC);
+    NetworkLogs.clearLogs();
+  }
+
+  @BeforeEach
+  public void iAmOnAmazonWebpage() {
+    controller = new Discord();
+  }
+
+  @Test
+  public void logIn() {
+    controller.clickIniciarSesion();
+    controller.clickEmail();
+    controller.clickPassword();
+  }
+
+  @AfterEach
+  public void closeDriver() {
+    AllureReport.fillReportInfo();
+    NetworkLogs.getNetworkLogs();
+    waitSeconds(Constants.LOW_TIMEOUT);
+  }
+
+  @AfterAll
+  public static void runReports() {
+    runAllureReport();
+  }
+
+  public static void runAllureReport() {
+    if (LocalEnviroment.isWindows()) {
+      JSExecutor.runCommand(Constants.ALLURE_COMMAND_WIN);
+    } else {
+      JSExecutor.runCommand(Constants.ALLURE_COMMAND_MAC);
     }
-    @BeforeEach
-    public void iAmOnAmazonWebpage() {
-        controller = new Discord();
+  }
+
+  public static void runAccessibilityCopy() {
+    if (LocalEnviroment.getAccessibility() && LocalEnviroment.isWeb()) {
+      Accessibility.moveHtmlReportToAccessibilityDirectory(Constants.ACCESSIBILITY_REPORT_PATH);
     }
-    @Test
-    public void logIn() {
-        controller.clickIniciarSesion();
-        controller.clickEmail();
-        controller.clickPassword();
-    }
-    @AfterEach
-    public void closeDriver() {
-        AllureReport.fillReportInfo();
-        NetworkLogs.getNetworkLogs();
-        waitSeconds(Constants.LOW_TIMEOUT);
-    }
-    @AfterAll
-    public static void runReports() {
-            runAllureReport();
-        }
+  }
 }
