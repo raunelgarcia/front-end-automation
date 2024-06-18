@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utilities.Constants;
 import utilities.DriverConfiguration;
+import utilities.FrontEndOperation;
 
 import java.time.Duration;
 
@@ -34,10 +35,12 @@ public class Discord {
   }
 
   public void clickEmail() {
+    FrontEndOperation.waitForVisibility(email);
     email.sendKeys("ejemplo@gmail.com");
   }
 
   public void clickPassword() {
+    FrontEndOperation.waitForVisibility(password);
     password.sendKeys("123456");
   }
 }
