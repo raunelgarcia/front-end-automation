@@ -3,7 +3,6 @@ package scripts;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pages.Amazon;
-import pages.Ikea;
 import utilities.*;
 
 import static scripts.MarcaTest.runAllureReport;

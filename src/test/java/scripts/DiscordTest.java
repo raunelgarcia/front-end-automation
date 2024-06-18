@@ -2,7 +2,7 @@ package scripts;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pages.Ikea;
+import pages.Discord;
 import utilities.*;
 
 import static scripts.MarcaTest.runAllureReport;
@@ -11,7 +11,7 @@ import static utilities.FrontEndOperation.waitSeconds;
 @ExtendWith(TestErrorHandler.class)
 public class DiscordTest {
 
-    Ikea controller;
+    Discord controller;
 
     @BeforeAll
     public static void clean_reports_logs() {
@@ -21,10 +21,13 @@ public class DiscordTest {
     }
     @BeforeEach
     public void iAmOnAmazonWebpage() {
-        controller = new Ikea();
+        controller = new Discord();
     }
     @Test
     public void logIn() {
+        controller.clickIniciarSesion();
+        controller.clickEmail();
+        controller.clickPassword();
     }
     @AfterEach
     public void closeDriver() {
