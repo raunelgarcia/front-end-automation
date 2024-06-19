@@ -25,17 +25,17 @@ public class Discord {
   WebElement iniciarSesion;
 
   @FindBy(id = "uid_7")
-  @AndroidFindBy(id = "login_login_input")
+  @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id=\"login_login_input\"]")
   WebElement email;
 
   @FindBy(id = "uid_9")
-  @AndroidFindBy(id = "login_password_input")
+  @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id=\"login_password_input\"]")
   WebElement password;
 
   @FindBy(
       xpath =
           "//button[@type='submit' and contains(@class, 'button_dc6abe') and contains(@class, 'button_dd4f85')]")
-  @AndroidFindBy(id = "login_submit_button")
+  @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Iniciar sesión\"]")
   WebElement botonIniciarSesion;
 
   @FindBy(className = "title_d10a58")
