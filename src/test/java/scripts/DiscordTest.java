@@ -23,6 +23,7 @@ public class DiscordTest {
             ? Constants.NETWORK_LOG_CLEAN_COMMAND_WIN
             : Constants.NETWORK_LOG_CLEAN_COMMAND_MAC);
     NetworkLogs.clearLogs();
+    AllureReport.fillReportInfo();
   }
 
   @BeforeEach
@@ -33,8 +34,9 @@ public class DiscordTest {
   @Test
   public void logIn() {
     controller.clickIniciarSesion();
-    controller.clickEmail();
-    controller.clickPassword();
+    controller.rellenarEmail();
+    controller.rellenarPassword();
+    controller.clickBotonIniciarSesion();
   }
 
   @AfterEach
@@ -47,6 +49,7 @@ public class DiscordTest {
   @AfterAll
   public static void runReports() {
     runAllureReport();
+    runAccessibilityCopy();
   }
 
   public static void runAllureReport() {
