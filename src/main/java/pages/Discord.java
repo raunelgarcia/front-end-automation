@@ -1,6 +1,7 @@
 package pages;
 
 import helpers.TextTranslation;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,20 +20,26 @@ public class Discord {
   private WebDriver driver;
 
   @FindBy(className = "login-button-js")
+  @AndroidFindBy(
+      xpath = "//android.widget.Button[@content-desc=\"Iniciar sesión\"]/android.view.ViewGroup")
   WebElement iniciarSesion;
 
   @FindBy(id = "uid_7")
+  @AndroidFindBy(id = "login_login_input")
   WebElement email;
 
   @FindBy(id = "uid_9")
+  @AndroidFindBy(id = "login_password_input")
   WebElement password;
 
   @FindBy(
       xpath =
           "//button[@type='submit' and contains(@class, 'button_dc6abe') and contains(@class, 'button_dd4f85')]")
+  @AndroidFindBy(id = "login_submit_button")
   WebElement botonIniciarSesion;
 
   @FindBy(className = "title_d10a58")
+  @AndroidFindBy(xpath = "//android.view.View[@text=\"¡Espera! ¿Eres un ser humano?\"]")
   WebElement textoConfirmacion;
 
   public Discord() {
