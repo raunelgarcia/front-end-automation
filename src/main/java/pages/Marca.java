@@ -42,20 +42,4 @@ public class Marca extends FrontEndOperation {
       acceptCookies.click();
     }
   }
-
-  public void goToNotice() {
-    randomNotice.click();
-  }
-
-  public void acceptAge() {
-    clickWhenVisible(ageButton);
-  }
-
-  public boolean isNoticeShow() {
-    return isVisible(randomNotice);
-  }
-
-  public void clickNoticia() {
-    clickWhenVisible(noticia);
-  }
 }
