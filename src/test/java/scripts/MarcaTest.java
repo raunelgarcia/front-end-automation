@@ -2,17 +2,19 @@ package scripts;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pages.Discord;
+import pages.Marca;
 import utilities.*;
 
 import static helpers.Runners.runAccessibilityCopy;
 import static helpers.Runners.runAllureReport;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static utilities.FrontEndOperation.compareTexts;
 import static utilities.FrontEndOperation.waitSeconds;
 
 @ExtendWith(TestErrorHandler.class)
-public class DiscordTest {
+public class MarcaTest {
 
-  Discord controller;
+  private static Marca controller;
 
   @BeforeAll
   public static void clean_reports_logs() {
@@ -24,16 +26,13 @@ public class DiscordTest {
   }
 
   @BeforeEach
-  public void iAmOnAmazonWebpage() {
-    controller = new Discord();
+  public void iAmOnTheMarcaWebsite() {
+    controller = new Marca();
   }
 
   @Test
-  public void logIn() {
-    controller.clickIniciarSesion();
-    controller.rellenarEmail();
-    controller.rellenarPassword();
-    controller.clickBotonIniciarSesion();
+  public void checkNewsArticleImage() {
+    controller.acceptCookies();
   }
 
   @AfterEach

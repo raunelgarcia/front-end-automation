@@ -66,7 +66,7 @@ public class Discord {
     FrontEndOperation.waitSeconds(4);
     FrontEndOperation.checkThat(
         "El texto es igual",
-        FrontEndOperation.compareTexts(textoConfirmacion, TextTranslation.get("textoConfirmacion")),
-        is(true));
+        textoConfirmacion.getText(),
+        is(TextTranslation.get("textoConfirmacion")));
   }
 }
