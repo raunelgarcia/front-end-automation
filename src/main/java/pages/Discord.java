@@ -1,19 +1,18 @@
 package pages;
 
+import static org.hamcrest.Matchers.is;
+import static org.openqa.selenium.support.PageFactory.initElements;
+
 import helpers.TextTranslation;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utilities.Constants;
 import utilities.DriverConfiguration;
 import utilities.FrontEndOperation;
-
-import java.time.Duration;
-
-import static org.hamcrest.Matchers.is;
-import static org.openqa.selenium.support.PageFactory.initElements;
 
 public class Discord {
 
@@ -34,7 +33,7 @@ public class Discord {
 
   @FindBy(
       xpath =
-          "//button[@type='submit' and contains(@class, 'button_dc6abe') and contains(@class, 'button_dd4f85')]")
+          "//button[@type='submit' and contains(@class, 'button_b83a05') and contains(@class, 'button_dd4f85')]")
   @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Iniciar sesión\"]")
   WebElement botonIniciarSesion;
 
