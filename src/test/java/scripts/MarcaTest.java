@@ -33,6 +33,10 @@ public class MarcaTest {
   @Test
   public void checkNewsArticleImage() {
     controller.acceptCookies();
+    controller.clickLeganes();
+    controller.clickPlantilla();
+    controller.checkNamePlayer();
+    controller.changeTab();
   }
 
   @AfterEach
