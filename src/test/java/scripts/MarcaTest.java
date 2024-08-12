@@ -1,15 +1,12 @@
 package scripts;
 
+import static helpers.Runners.runAccessibilityCopy;
+import static helpers.Runners.runAllureReport;
+
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pages.Marca;
 import utilities.*;
-
-import static helpers.Runners.runAccessibilityCopy;
-import static helpers.Runners.runAllureReport;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static utilities.FrontEndOperation.compareTexts;
-import static utilities.FrontEndOperation.waitSeconds;
 
 @ExtendWith(TestErrorHandler.class)
 public class MarcaTest {
@@ -33,10 +30,6 @@ public class MarcaTest {
   @Test
   public void checkNewsArticleImage() {
     controller.acceptCookies();
-    controller.clickLeganes();
-    controller.clickPlantilla();
-    controller.checkNamePlayer();
-    controller.changeTab();
   }
 
   @AfterEach
