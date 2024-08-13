@@ -10,7 +10,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <front-end-framework.version>1.0.13</front-end-framework.version>
+        <front-end-framework.version>1.0.18</front-end-framework.version>
     </properties>
 
     <repositories>
