@@ -1,13 +1,12 @@
 package scripts;
 
+import static helpers.Runners.runAccessibilityCopy;
+import static helpers.Runners.runAllureReport;
+
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pages.Discord;
 import utilities.*;
-
-import static helpers.Runners.runAccessibilityCopy;
-import static helpers.Runners.runAllureReport;
-import static utilities.FrontEndOperation.waitSeconds;
 
 @ExtendWith(TestErrorHandler.class)
 public class DiscordTest {
